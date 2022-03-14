@@ -11,9 +11,15 @@
   &__prev {
     margin-right: 2rem;
     cursor: pointer;
+    &--none {
+      color: transparent;
+    }
   }
   &__next {
     margin-left: 2rem;
     cursor: pointer;
+    &--none {
+      color: transparent;
+    }
   }
 }

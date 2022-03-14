@@ -119,9 +119,17 @@ h6 {
   cursor: pointer;
 }
 
+.arrow__prev--none {
+  color: transparent;
+}
+
 .arrow__next {
   margin-left: 2rem;
   cursor: pointer;
+}
+
+.arrow__next--none {
+  color: transparent;
 }
 
 .form {

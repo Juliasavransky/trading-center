@@ -3,15 +3,22 @@ import '../Styles/main.css';
 
 
 const PaginationPrev = ({
-    prev
+    prev,
+    currentPage
 }) => {
-
+    console.log(currentPage)
     return (
-        <div
-            onClick={() => prev()}
-            className="arrow__next">
-            &#x2B9C;
-        </div>
+        currentPage < 2
+            ? <div
+                onClick={() => prev()}
+                className="arrow__next--none">
+                &#x2B9C;
+            </div>
+            : <div
+                onClick={() => prev()}
+                className="arrow__next">
+                &#x2B9C;
+            </div>
     )
 }
 

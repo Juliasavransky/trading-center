@@ -95,6 +95,7 @@ const App = () => {
       <div className="arrow">
         <PaginationPrev
           prev={prev}
+          currentPage={currentPage}
         />
         {currentCoins.map((item, index) => (
           <Navbar
@@ -109,6 +110,7 @@ const App = () => {
         ))}
         <PaginationNext
           next={next}
+          currentPage={currentPage}
         />
       </div>
 
@@ -133,8 +135,6 @@ const App = () => {
           loading={loading}
           currency={currency}
         />}
-
-
     </div>
   );
 }
