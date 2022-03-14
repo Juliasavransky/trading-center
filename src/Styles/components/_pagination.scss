@@ -1,0 +1,19 @@
+.arrow {
+  display: flex;
+  font-size: $font-h2;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  flex-wrap: wrap;
+  background-color: $blue-dark;
+  color: $red;
+  &__prev {
+    margin-right: 2rem;
+    cursor: pointer;
+  }
+  &__next {
+    margin-left: 2rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,68 @@
+@import '../utils/variables';
+
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // making the rem=px
+  height: 100%;
+
+  overflow-x: hidden;
+
+  //   @include respond(desktop) {
+  //     font-size: 62%;
+  //   }
+
+  //   @include respond(tab-land) {
+  //
+  //   }
+
+  //   @include respond(tab-port) {
+  //
+  //   }
+  //   @include respond(phone) {
+  //
+  //   }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $textFont;
+  height: 100%;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}

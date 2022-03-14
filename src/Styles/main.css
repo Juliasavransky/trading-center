@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.navbar {
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  color: #ffcc00;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+}
+
+.navbar__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.navbar__info--image {
+  width: 4rem;
+  cursor: pointer;
+}
+
+.navbar__info--name {
+  font-size: 1.4rem;
+  margin: 0 1rem;
+}
+
+.navbar__info--price {
+  font-size: 1.4rem;
+}
+
+.navbar__change--icon {
+  color: #00a13b;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 7rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #18164f;
+  color: #e80074;
+}
+
+.arrow__prev {
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.arrow__next {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.form {
+  font-size: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+}
+
+.form__input {
+  border-radius: 2rem;
+  padding: 0.5rem 4rem;
+}
+
+.form__input:focus {
+  outline: 3px solid #ff6e00;
+}
