@@ -1,5 +1,9 @@
-# Getting Started with Create React App
+## The app displays the last month's crypto currency exchange rates.
+The project uses the Coingecko API, Chart.js, SCSS, and Axios.
 
+![image](https://user-images.githubusercontent.com/63636407/158212909-712ff26c-1733-4309-814e-e5951969def2.png)
+
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
