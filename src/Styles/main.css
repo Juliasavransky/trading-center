@@ -108,8 +108,6 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   background-color: #18164f;
   color: #e80074;
 }
