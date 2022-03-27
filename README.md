@@ -3,6 +3,7 @@ The project uses the Coingecko API, Chart.js, SCSS, and Axios.
 
 ![image](https://user-images.githubusercontent.com/63636407/158212909-712ff26c-1733-4309-814e-e5951969def2.png)
 
+## [Welcome to give it a try](https://juliasavransky.github.io/trading-center/)
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
