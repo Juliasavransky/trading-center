@@ -19,12 +19,11 @@ const Search = ({
                     onChange={handelChange}
                     type="text"
                     id="input"
-                    placeholder='Search for Your Crypto currency'
+                    placeholder='Search for Your Crypto'
                     className="form__input"
                     required
                     value={currency}
                 />
-                {/* <button type="submit" className="form__btn">Search</button> */}
             </form>
         </Fragment>
     )

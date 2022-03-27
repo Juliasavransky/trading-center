@@ -27,7 +27,7 @@ const Chart = ({
     currency,
     loading,
 }) => {
-
+    console.log('currency from Chart', currency)
     return (
         <div>
             {loading ? <h1>loading...</h1> :
@@ -52,7 +52,7 @@ const Chart = ({
                         hoverBackgroundColor: '#e80074',
                         plugins: {
                             legend: {
-                                position: 'top',
+                                position: 'bottom',
                             },
                             // title: {
                             //     display: true,

@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Chart from './components/Chart';
 import Search from './components/Search';
-// import Pagination from './components/Pagination';
 import PaginationPrev from './components/PaginationPrev';
 import PaginationNext from './components/PaginationNext';
 
@@ -15,27 +14,45 @@ const App = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
-
-  const [cryptoName, setCryptoName] = useState([]);//crypto by name data
+  const [cryptoName, setCryptoName] = useState([]);//crypto data by name of the crypto
   const [currency, setCurrency] = useState('')//name of crypto currency
 
   const [crypto, setCrypto] = useState([]);//crypto data 200 items
+
   const [currentPage, setCurrentPage] = useState(1)//num of the page
-  const [cryptoPerPage, setCryptoPerPage] = useState(10)//name of items on  page
+  const [cryptoPerPage] = useState(10)//name of items on  page
 
 
 
 
-  const handelChange = (e) => {
+  const handelChange = (e) => { //getting the name from the search line
     setCurrency(e.target.value)
 
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { //cleaning the search line
     e.preventDefault();
     setCurrency("")
   }
 
-  useEffect(() => {
+  useEffect(() => { //getting the data from the api by the name of the crypto currency
+    const fetchCrypto = async () => {
+      setError(false);
+      setLoading(true);
+      try {
+        const result = await axios.get(`${crypto_URL}coins/${currency}/market_chart?vs_currency=usd&days=30&interval=daily`);
+        setCryptoName(result.data.prices);
+        console.log('crypto', result.data);
+        setLoading(false);
+      }
+      catch (error) {
+        setError(true);
+        setLoading(false);
+      }
+    }
+    fetchCrypto()
+  }, [currency]);
+
+  useEffect(() => { //getting the data from the api for the 200 crypto 
     const fetchCrypto = async () => {
       setError(false);
       setLoading(true);
@@ -53,40 +70,28 @@ const App = () => {
     fetchCrypto()
   }, []);
 
-  useEffect(() => {
-    const fetchCrypto = async () => {
-      setError(false);
-      setLoading(true);
-      try {
-        const result = await axios.get(`${crypto_URL}coins/${currency}/market_chart?vs_currency=usd&days=30&interval=daily`);
-        setCryptoName(result.data.prices);
-        // console.log('crypto', result.data);
-        setLoading(false);
-      }
-      catch (error) {
-        setError(true);
-        setLoading(false);
-      }
-    }
-    fetchCrypto()
-  }, [currency]);
 
-  const handleChoice = (id) => {
+
+  const handleChoice = (id) => { //setting the name by the chose in the navbar (by id)
     setCurrency(id)
     console.log(id)
   }
+  const timestamp = loading
+    ? ""
+    : cryptoName.map((item) => new Date(item[0]).toLocaleDateString()); //mapping the dates from the api call
 
-  const timestamp = loading ? "" : cryptoName.map((item) => new Date(item[0]).toLocaleDateString())
-  const prises = loading ? "" : cryptoName.map((item) => item[1])
+  const prises = loading
+    ? ""
+    : cryptoName.map((item) => item[1]); //mapping the prises from the api call
 
   const indexOfLastPost = currentPage * cryptoPerPage; //number of items already seen 
   const indexOfFirstPost = indexOfLastPost - cryptoPerPage;// num of total pages 
   const currentCoins = crypto.slice(indexOfFirstPost, indexOfLastPost);//cutting 10 from the data
 
-  const next = () => {
+  const next = () => { //getting the next page
     setCurrentPage(currentPage => currentPage + 1)
   }
-  const prev = () => {
+  const prev = () => { //getting the prev page
     setCurrentPage(currentPage => currentPage - 1)
   }
   return (
@@ -113,15 +118,6 @@ const App = () => {
           currentPage={currentPage}
         />
       </div>
-
-
-
-      {/* <Pagination
-        cryptoPerPage={cryptoPerPage}
-        totalCrypto={crypto.length}
-        next={next}
-        prev={prev}
-      /> */}
 
       <Search
         handelChange={handelChange}
